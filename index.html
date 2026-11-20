@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SMS Expense Tracker releases</title>
+<meta name="description" content="What's new in each version of SMS Expense Tracker, an Android app that reads your bank SMS on your phone and shows what you spent.">
+<style>
+  :root {
+    --bg: #f7f8fa; --surface: #ffffff; --text: #1b1d21; --muted: #5b616b; --line: #e3e6eb;
+    --accent: #0b6e8a; --accent-soft: #e3f2f6; --badge: #8a5a00; --badge-soft: #fff1d6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #101215; --surface: #181b20; --text: #e7e9ec; --muted: #a2a8b2; --line: #2a2e35;
+      --accent: #7cc7dc; --accent-soft: #15313a; --badge: #f2c46b; --badge-soft: #3a2d12;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+  header h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 8px; }
+  header p { color: var(--muted); margin: 0; }
+  nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 8px; }
+  nav a { color: var(--accent); background: var(--accent-soft); border-radius: 999px; padding: 4px 12px;
+    text-decoration: none; font-size: .9rem; }
+  section.release { background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
+    padding: 20px 20px 8px; margin-top: 20px; }
+  .release h2 { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 12px; margin: 0 0 4px; font-size: 1.35rem; }
+  .meta { color: var(--muted); font-size: .9rem; margin: 0 0 12px; }
+  .badge { font-size: .75rem; font-weight: 600; letter-spacing: .02em; color: var(--badge); background: var(--badge-soft);
+    border-radius: 999px; padding: 2px 10px; }
+  .release h3 { font-size: .95rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 16px 0 4px; }
+  ul { margin: 0 0 12px; padding-left: 20px; }
+  li { margin: 4px 0; }
+  li b { font-weight: 600; }
+  .plain { background: transparent; border: 0; padding: 0; }
+  footer { color: var(--muted); font-size: .85rem; margin-top: 40px; border-top: 1px solid var(--line); padding-top: 16px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>SMS Expense Tracker</h1>
+    <p>An Android app that reads your bank and UPI SMS on your phone, sorts them into categories and shows what you
+      spent. It has no internet permission: your messages and money never leave the phone.</p>
+    <nav aria-label="Versions">
+      <a href="#v1-5">1.5</a><a href="#v1-4">1.4</a><a href="#v1-3">1.3</a><a href="#v1-2">1.2</a>
+      <a href="#v1-1">1.1</a><a href="#v1-0">1.0</a><a href="#update">How to update</a><a href="#privacy">Privacy</a>
+    </nav>
+  </header>
+
+  <section class="release" id="v1-5">
+    <h2>Version 1.5 <span class="badge">In testing</span></h2>
+    <p class="meta">Being tested before release. The largest update so far.</p>
+    <h3>New</h3>
+    <ul>
+      <li><b>Money habits.</b> Patterns in your own spending: weekends against weekdays, small spends, category changes and cash, with simple charts and a note on how complete your data is. Worked out on your phone; it describes, it never advises.</li>
+      <li><b>Card bills.</b> Statements and due dates from your bank's SMS, and whether each bill looks paid.</li>
+      <li><b>Meal and prepaid cards.</b> Loads count as income once the card is saved; spends show as paid by prepaid card.</li>
+      <li><b>Notifications</b> for new transactions, with Confirm and Exclude right there, and an optional evening summary.</li>
+      <li><b>Skipped messages</b> (off by default): check the bank SMS the app left out, ten at a time.</li>
+      <li><b>Why it's not a transaction.</b> Reasons in plain groups (Not a payment, Already counted, Not my spending). Optional, and the right ones teach the app to skip similar messages.</li>
+      <li><b>Share the app</b> from Settings › About.</li>
+    </ul>
+    <h3>Better</h3>
+    <ul>
+      <li><b>Clearer merchants.</b> One name per well-known shop (Zepto, Swiggy, Amazon…), with sub-brands such as Swiggy Instamart kept apart, and a bank's "To Block, call…" line is never mistaken for a merchant.</li>
+      <li><b>More messages understood:</b> brokerage and SIP money, UPI addresses as payees, card slips with a city.</li>
+      <li><b>Scan a whole year or your whole inbox.</b> A transaction whose SMS you deleted is kept, and says so.</li>
+      <li><b>Hold a transaction to read its SMS.</b> Excluded transactions can have a category too.</li>
+      <li><b>Overview</b> totals and categories open exactly the transactions they count.</li>
+      <li><b>Reviewing:</b> shorter cards, duplicates linked to their original, your own subcategories, names for UPI addresses, notes and a cleaner editor.</li>
+      <li><b>Haptics</b> at the moments that matter, following your phone's touch feedback setting.</li>
+      <li><b>Small screens:</b> rows, tags and buttons read in full on compact phones.</li>
+    </ul>
+    <h3>Fixed</h3>
+    <ul>
+      <li>SMS showed "Not connected" after an update.</li>
+      <li>A category changed from a notification could be lost.</li>
+      <li>A meal card load appeared twice in Review.</li>
+      <li>Skipped messages got stuck after a swipe.</li>
+      <li>A card spend showed the merchant "Block".</li>
+      <li>The "no category" list included excluded transactions.</li>
+      <li>Text was cut on narrow phones.</li>
+    </ul>
+  </section>
+
+  <section class="release" id="v1-4">
+    <h2>Version 1.4</h2>
+    <p class="meta">14 November 2026</p>
+    <ul>
+      <li>Many waiting from one merchant? Choose <b>By merchant</b> on Review, pick a category once, then Confirm all or Exclude all.</li>
+      <li>Add your own subcategories with <b>New</b> under the subcategory choices. Find them in Settings › Preferences.</li>
+    </ul>
+  </section>
+
+  <section class="release" id="v1-3">
+    <h2>Version 1.3</h2>
+    <p class="meta">14 November 2026</p>
+    <ul>
+      <li>Add a note to any transaction. Notes show under it, and search finds them. They stay on this phone and in your CSV export.</li>
+      <li>A short tour for each tab, in Settings › About › Tours.</li>
+      <li>A transaction's details and payment mode stay on one line on smaller phones.</li>
+    </ul>
+  </section>
+
+  <section class="release" id="v1-2">
+    <h2>Version 1.2</h2>
+    <p class="meta">13 November 2026</p>
+    <ul>
+      <li>Choices on a review card are saved as you make them; Confirm when you are sure. Cards show the time too.</li>
+      <li>Mandate set-up notices and a biller's receipt for a payment your bank already reported no longer count as spending; autopay debits do. Pick from ten payment modes.</li>
+      <li>While editing a transaction, swipe right to save or left to cancel.</li>
+      <li>Transactions you add yourself now come back after a reinstall too.</li>
+    </ul>
+  </section>
+
+  <section class="release" id="v1-1">
+    <h2>Version 1.1</h2>
+    <p class="meta">13 November 2026</p>
+    <ul>
+      <li>When you exclude a message, pick why: an offer, an OTP, a balance alert and more.</li>
+      <li>Messages like the ones you excluded are skipped from then on. You can turn this off in Preferences.</li>
+      <li>Your reviews are kept in Documents › SMS Expense Tracker, so they come back after a reinstall.</li>
+    </ul>
+  </section>
+
+  <section class="release" id="v1-0">
+    <h2>Version 1.0</h2>
+    <p class="meta">The first version</p>
+    <ul>
+      <li>Reads your bank SMS on this phone, sorts them into categories and shows what you spent each month.</li>
+    </ul>
+  </section>
+
+  <section class="release plain" id="update">
+    <h2>How to update</h2>
+    <ul>
+      <li>Install the new version <b>over</b> the one you have. Don't uninstall first: your transactions live only on your phone, and uninstalling deletes them.</li>
+      <li>On first launch the app brings your saved transactions up to date with the new rules; anything you edited yourself is kept as you left it.</li>
+      <li>Settings › About shows the version you have, and "What's new" appears once after each update.</li>
+    </ul>
+  </section>
+
+  <section class="release plain" id="privacy">
+    <h2>Privacy</h2>
+    <ul>
+      <li>The app has no internet permission. Reading, sorting and Money habits all happen on your phone.</li>
+      <li>Account and card numbers are masked before anything is stored.</li>
+      <li>"Remember my reviews" keeps only fingerprints of messages and your decisions, never the text of an SMS.</li>
+    </ul>
+  </section>
+
+  <footer>Release notes for SMS Expense Tracker. Versions are listed newest first.</footer>
+</main>
+</body>
+</html>
